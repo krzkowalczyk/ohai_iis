@@ -20,8 +20,7 @@ platforms:
 suites:
   - name: default
     run_list:
-#      - recipe[powershell::powershell3]
-      - recipe[ohai_iis::app]
+      - recipe[ohai_iis::default]
     verifier:
       inspec_tests:
         - test/smoke/default

@@ -1,5 +1,6 @@
 source 'https://supermarket.chef.io'
 
-cookbook 'powershell'
+cookbook 'chef-client'
+cookbook 'ohai'
 
 metadata
