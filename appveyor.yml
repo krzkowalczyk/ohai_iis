@@ -6,6 +6,7 @@ environment:
 branches:
   only:
     - master
+    - devel
 
 # Do not build on tags (GitHub only)
 skip_tags: true
