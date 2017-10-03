@@ -1,7 +1,7 @@
 name 'ohai_iis'
 maintainer 'Krzysztof Kowalczyk'
 maintainer_email 'krz.kowalczyk@gmail.com'
-license 'Apache 2.0'
+license          'Apache-2.0'
 description 'Installs/Configures ohai_iis'
 long_description 'Installs/Configures ohai_iis'
 version '0.1.0'
