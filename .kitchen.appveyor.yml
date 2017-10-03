@@ -20,4 +20,4 @@ verifier:
 suites:
   - name: feature
     run_list:
-      - recipe[oha_iis]
+      - recipe[ohai_iis::default]
