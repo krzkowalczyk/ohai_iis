@@ -1,9 +1,18 @@
 return unless platform?('windows')
 
-node.default['ohai']['plugin_path'] = node['chef_client']['conf_dir'] + '/ohai/plugins'
-
 include_recipe 'chef-client::config'
+
+if node['ohai_iis']['install-Web-Scripting-Tools']
+  windows_feature 'Web-Scripting-Tools' do
+    action :install
+    install_method :windows_feature_powershell
+    guard_interpreter :powershell_script
+    only_if '(Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed'
+  end
+end
 
 ohai_plugin 'iis' do
   name 'iis'
+  guard_interpreter :powershell_script
+  only_if '(Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed'
 end
