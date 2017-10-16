@@ -10,7 +10,4 @@ describe_ohai_plugin :Iis do
   it 'provides iis/webapplications' do
     expect(plugin).to provides_attribute('iis/webapplications')
   end
-
-  let(:command) { double('Fake Command',stdout: 'OUTPUT') }
-
 end
