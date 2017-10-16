@@ -16,3 +16,7 @@ end
 describe port(80), :skip do
   it { should_not be_listening }
 end
+
+# describe file('C:/Users/vagrant/AppData/Local/Temp/kitchen/ohai/plugins/iis.rb') do
+#   it { should exist }
+# end

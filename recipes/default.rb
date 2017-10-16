@@ -7,12 +7,12 @@ if node['ohai_iis']['install-Web-Scripting-Tools']
     action :install
     install_method :windows_feature_powershell
     guard_interpreter :powershell_script
-    only_if '(Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed'
+    only_if 'Import-Module ServerManager; (Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed'
   end
 end
 
 ohai_plugin 'iis' do
   name 'iis'
   guard_interpreter :powershell_script
-  only_if '(Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed'
+  only_if 'Import-Module ServerManager; (Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed'
 end
