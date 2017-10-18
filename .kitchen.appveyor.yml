@@ -21,3 +21,10 @@ suites:
   - name: default
     run_list:
       - recipe[ohai_iis::default]
+      - recipe[export-node]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
+      ohai_iis:
+        install-Web-Scripting-Tools: true
