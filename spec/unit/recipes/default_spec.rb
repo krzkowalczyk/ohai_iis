@@ -18,7 +18,7 @@ describe 'ohai_iis::default' do
     before do
       stub_const('WIN32OLE', Module.new) unless defined?(WIN32OLE)
       allow(WIN32OLE).to receive(:connect).and_return(double(ExecQuery: []))
-      stub_command('(Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed').and_return(true)
+      stub_command('Import-Module ServerManager; (Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed').and_return(true)
     end
 
     it 'installs ohai plugin' do
@@ -41,7 +41,7 @@ describe 'ohai_iis::default' do
     before do
       stub_const('WIN32OLE', Module.new) unless defined?(WIN32OLE)
       allow(WIN32OLE).to receive(:connect).and_return(double(ExecQuery: []))
-      stub_command('(Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed').and_return(true)
+      stub_command('Import-Module ServerManager; (Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed').and_return(true)
     end
 
     it 'installs ohai plugin' do
@@ -64,7 +64,7 @@ describe 'ohai_iis::default' do
     before do
       stub_const('WIN32OLE', Module.new) unless defined?(WIN32OLE)
       allow(WIN32OLE).to receive(:connect).and_return(double(ExecQuery: []))
-      stub_command('(Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed').and_return(true)
+      stub_command('Import-Module ServerManager; (Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed').and_return(true)
     end
 
     it 'installs ohai plugin' do
@@ -87,7 +87,7 @@ describe 'ohai_iis::default' do
     before do
       stub_const('WIN32OLE', Module.new) unless defined?(WIN32OLE)
       allow(WIN32OLE).to receive(:connect).and_return(double(ExecQuery: []))
-      stub_command('(Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed').and_return(false)
+      stub_command('Import-Module ServerManager; (Get-WindowsFeature | where {$_.name -eq "Web-Server"}).installed').and_return(false)
     end
 
     it 'installs ohai plugin' do
