@@ -49,16 +49,15 @@ Ohai.plugin :Iis do
     services = obj_wmi.query('SELECT * FROM Win32_Service WHERE Name LIKE \'%.services%\'')
 
     services.each do |service|
-      arr_service = service['Name'].split(".")
+      arr_service = service['Name'].split('.')
       arr_service.shift
       arr_service.shift
-      service_name = arr_service.join(".")
-      service_path = service['PathName'].split("\"")[1]
+      service_name = arr_service.join('.')
+      service_path = service['PathName'].split('\"')[1]
 
       iis['wcf'][service_name] = Mash.new
       iis['wcf'][service_name]['Name'] = service_name
       iis['wcf'][service_name]['Path'] = service_path
     end
-
   end
 end

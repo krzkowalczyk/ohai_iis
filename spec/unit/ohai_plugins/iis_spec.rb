@@ -18,5 +18,4 @@ describe_ohai_plugin :Iis do
   it 'provides iis/wcf' do
     expect(plugin).to provides_attribute('iis/wcf')
   end
-
 end
