@@ -1,5 +1,5 @@
 Ohai.plugin :Iis do
-  provides 'iis/webapplications', 'iis/sites'
+  provides 'iis/webapplications', 'iis/sites', 'iis/wcf'
 
   collect_data :windows do
     require 'wmi-lite/wmi'
