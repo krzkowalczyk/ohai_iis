@@ -10,4 +10,13 @@ describe_ohai_plugin :Iis do
   it 'provides iis/webapplications' do
     expect(plugin).to provides_attribute('iis/webapplications')
   end
+
+  it 'provides iis/sites' do
+    expect(plugin).to provides_attribute('iis/sites')
+  end
+
+  it 'provides iis/wcf' do
+    expect(plugin).to provides_attribute('iis/wcf')
+  end
+
 end
